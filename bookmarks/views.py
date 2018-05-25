@@ -1,17 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.template import loader
 
 def main_page(request):
-    output = '''
-    <html>
-    <head><title>%s</title></head>
-    <body>
-    <h1>%s</h1>
-    <p>%s</p>
-    </body>
-    </html>''' % (
-        'DJango Bookmarks',
-        'Welcome to DJango Bookmarks',
-        'Where you can store and share bookmarks !!', )
+    template=loader.get_template('bookmarks/main_page.html')
 
-    return HttpResponse(output)    
+    return HttpResponse(template.render({},request))
+    
+
