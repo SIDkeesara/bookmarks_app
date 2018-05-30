@@ -2,6 +2,16 @@
     <head><title>Django Bookmarks</title></head>
     <body>
     <h1>Welcome to Django Bookmarks</h1>
+    {% if user.username %}
+        <p>Welcome {{ user.username }}!
+            Here you can store and share bookmarks!!
+        </p>
+    {% else %}
+        <p>Welcome anonymous user !
+               You need to <a href="/login/"></a>
+               Before you can store and share bookmarks.
+        </p> 
     <p>Where you can store and share BOOKMARKS !!</p>
+    {% endif %}
     </body>
  </html>
