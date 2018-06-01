@@ -1,8 +1,7 @@
-<html>
-    <head>
-        <title> Django Bookmarks - User: {{ username }}</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block title %} {{ username }} {% endblock %}
+{% block head %}  Bookmarks for {{ username }} {% endblock %}
+{% block content %}
         <h1>Bookmarks for {{ username }}</h1>
         {% if bookmarks %}
             <ul>
@@ -15,5 +14,4 @@
         {% else %}
             <p> No bookmarks found.</p>
         {% endif %}
-    </body>
-</html
+{% endblock %}     
